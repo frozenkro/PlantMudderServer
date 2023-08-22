@@ -5,10 +5,11 @@ const router = express.Router();
 
 router.post("/", (req: Request, res: Response) => {
     logger.info(req.body);
+    res.status(200).send();
 });
 router.get("/test", (req: Request, res: Response) => {
     logger.info(Date());
-    res.send("success");
+    res.status(200).send();
 });
 
 export default router;
