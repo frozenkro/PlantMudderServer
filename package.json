@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\""
+    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "docker:build": "docker build -t plant-mudder-server .",
+    "docker:run": "docker run -p 3000:3000 plant-mudder-server"
   },
   "repository": {
     "type": "git",
