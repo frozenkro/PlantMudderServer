@@ -25,3 +25,15 @@ jobs:
         context: .
         push: true
         tags: frozenkro/plant-mudder-server:latest
+
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: $EC2_HOST_DOMAIN
+        username: ec2-user
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          docker pull frozenkro/plant-mudder-server:latest
+          docker stop plant-mudder-server || true
+          docker rm plant-mudder-server || true
+          docker run -d --name plant-mudder-server -p 3000:3000 frozenkro/plant-mudder-server:latest
