@@ -36,4 +36,4 @@ jobs:
           docker pull frozenkro/plant-mudder-server:latest
           docker stop plant-mudder-server || true
           docker rm plant-mudder-server || true
-          docker run -d --name plant-mudder-server -p 3000:3000 frozenkro/plant-mudder-server:latest
+          docker run -d --name plant-mudder-server -p 3000:3000 -v ./logs:~/logs frozenkro/plant-mudder-server:latest
