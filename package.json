@@ -2,7 +2,7 @@
   "name": "plantmudderserver",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
